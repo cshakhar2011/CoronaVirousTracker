@@ -19,17 +19,22 @@ table, th, td {
 <body>
 
 
-<table >
+	<table>
 
+		<tr>
+			<th>State</th>
+			<th>Country</th>
+			<th>LatestTotalCases</th>
+			<th>DiffFromPrevDay</th>
+		</tr>
+		<tr th:each="message : ${fatch}">
 
-	<tr th:each="message : ${fatch}">
-
-		<td th:text="${message.state}"></td>
-		<td th:text="${message.country}"></td>
-		<td th:text="${message.latestTotalCases}"></td>
-		<td th:text="${message.diffFromPrevDay}"></td>
-	</tr>
-</table>
+			<td th:text="${message.state}"></td>
+			<td th:text="${message.country}"></td>
+			<td th:text="${message.latestTotalCases}"></td>
+			<td th:text="${message.diffFromPrevDay}"></td>
+		</tr>
+	</table>
 
 </body>
 
