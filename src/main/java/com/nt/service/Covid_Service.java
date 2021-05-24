@@ -21,10 +21,12 @@ public class Covid_Service {
 
 	List<Covid_Model> newStats = new ArrayList<>();
 
-	
+
+
+
 
 	public List<Covid_Model> fatchDataAb() {
-		String body = null;
+		
 
 		try {
 
@@ -32,8 +34,7 @@ public class Covid_Service {
 			HttpRequest build = HttpRequest.newBuilder().uri(URI.create(Virous_Data)).build();
 
 			HttpResponse<String> send = newHttpClient.send(build, HttpResponse.BodyHandlers.ofString());
-			body = send.body();
-			StringReader csvBodyReader = new StringReader(body);
+			StringReader csvBodyReader = new StringReader(send.body());
 			Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(csvBodyReader);
 
 			for (CSVRecord record : records) {

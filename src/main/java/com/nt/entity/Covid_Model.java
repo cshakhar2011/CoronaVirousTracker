@@ -2,6 +2,7 @@ package com.nt.entity;
 
 public class Covid_Model {
 
+
 	private String state;
 	private String country;
 	private int latestTotalCases;
@@ -42,7 +43,11 @@ public class Covid_Model {
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Covid_Model [state=" + state + ", country=" + country + ", latestTotalCases=" + latestTotalCases
+				+ ", diffFromPrevDay=" + diffFromPrevDay + "]";
+	}
 	
 	
 }
